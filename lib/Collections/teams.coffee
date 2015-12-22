@@ -1,1 +1,1 @@
-@Teams = new Mongo.Collection('teams')
+@Teams = new Meteor.Collection('teams')

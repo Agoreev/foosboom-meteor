@@ -1,0 +1,19 @@
+<template name="team">
+    <li class="list-group-item">
+            {{#if editing}}
+                <form class="form-edit">
+                    <div class="form-group">
+                        <label for="nameInput">Name</label>
+                        <input class="form-control" id="nameInput" name="name" type="text" value="{{name}}">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a class="cancel btn btn-default" href="#">Cancel</a>
+                </form>
+            {{else}}
+                {{name}}
+                <a class="edit" href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a class="remove" href="#"><span class="glyphicon glyphicon-remove"></span></a>
+            {{/if}}
+    </li>
+</template>

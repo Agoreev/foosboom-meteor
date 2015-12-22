@@ -1,8 +1,25 @@
 <template name="teams">
-    <h3>Teams</h3>
-    <ul>
-        {{#each teams}}
-            <li>{{name}}</li>
-        {{/each}}
-    </ul>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Teams</h3>
+            {{#if creating}}
+                <form class="form-create">
+                    <div class="form-group">
+                        <label for="nameInput">Name</label>
+                        <input class="form-control" id="nameInput" name="name" type="text">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a class="cancel btn btn-default" href="#">Cancel</a>
+                </form>
+            {{else}}
+                <a class="create btn btn-primary" href="#">Create</a>
+            {{/if}}
+            <ul class="list-group">
+                {{#each teams}}
+                    {{>team}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 </template>
